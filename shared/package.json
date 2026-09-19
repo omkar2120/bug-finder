@@ -1,0 +1,22 @@
+{
+  "name": "@bugpilot/shared",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "import": "./src/index.ts",
+      "default": "./src/index.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "echo \"No shared tests\""
+  },
+  "devDependencies": {
+    "typescript": "^5.8.2"
+  }
+}

@@ -1,0 +1,1387 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>full qa report — maonsoon mitra</title>
+  <style>
+    body { font-family: Inter, ui-sans-serif, system-ui, sans-serif; background:#0b1220; color:#e5e7eb; margin:0; padding:40px; }
+    .card { background:#111827; border:1px solid #1f2937; border-radius:16px; padding:24px; margin-bottom:20px; }
+    h1,h2 { color:#f8fafc; }
+    .accent { color:#2dd4bf; }
+    table { width:100%; border-collapse:collapse; }
+    td,th { border-bottom:1px solid #1f2937; padding:8px 6px; text-align:left; font-size:14px; }
+    .muted { color:#94a3b8; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <p class="accent">BugPilot AI · Your AI QA Engineer</p>
+    <h1>full qa report — maonsoon mitra</h1>
+    <p>QA Health Score: <strong>62/100</strong></p>
+    <p class="muted">BugPilot QA Health Score is a product-defined heuristic, not an industry standard.</p>
+    <ul><li>-20 API failures (16)</li><li>-15 accessibility findings (32)</li><li>-10 content issues (12)</li><li>+7 high test pass rate</li></ul>
+  </div>
+  <div class="card">
+    <h2>Executive summary</h2>
+    <pre style="white-space:pre-wrap">[
+  &quot;Address accessibility findings, starting with missing labels and alt text.&quot;,
+  &quot;Review spelling and placeholder copy before production.&quot;
+]</pre>
+  </div>
+  <div class="card">
+    <h2>Full findings (JSON)</h2>
+    <pre style="white-space:pre-wrap; font-size:12px;">{
+  &quot;generatedAt&quot;: &quot;2026-09-12T17:12:23.181Z&quot;,
+  &quot;application&quot;: {
+    &quot;baseUrl&quot;: &quot;https://mansoon-mitra.web.app/&quot;,
+    &quot;allowedDomains&quot;: [
+      &quot;mansoon-mitra.web.app&quot;
+    ],
+    &quot;environment&quot;: &quot;staging&quot;,
+    &quot;_id&quot;: &quot;6aa57739f09d3d9e607aae3c&quot;,
+    &quot;prodUrl&quot;: &quot;&quot;,
+    &quot;qaUrl&quot;: &quot;&quot;,
+    &quot;uatUrl&quot;: &quot;&quot;
+  },
+  &quot;run&quot;: {
+    &quot;_id&quot;: &quot;6aa581c00490ae77f03766aa&quot;,
+    &quot;projectId&quot;: &quot;6aa57739f09d3d9e607aae3b&quot;,
+    &quot;triggeredBy&quot;: &quot;6aa5769afdea3c91f6c6dbff&quot;,
+    &quot;status&quot;: &quot;completed&quot;,
+    &quot;configuration&quot;: {
+      &quot;browser&quot;: &quot;chromium&quot;,
+      &quot;maxPages&quot;: 25,
+      &quot;maxDepth&quot;: 3,
+      &quot;maxDurationSeconds&quot;: 300,
+      &quot;headless&quot;: false
+    },
+    &quot;brief&quot;: {
+      &quot;focusMode&quot;: &quot;full&quot;,
+      &quot;focusPages&quot;: [],
+      &quot;instructions&quot;: &quot;&quot;,
+      &quot;customCases&quot;: []
+    },
+    &quot;currentActivity&quot;: &quot;AI testing complete&quot;,
+    &quot;healthReasons&quot;: [
+      &quot;-20 API failures (16)&quot;,
+      &quot;-15 accessibility findings (32)&quot;,
+      &quot;-10 content issues (12)&quot;,
+      &quot;+7 high test pass rate&quot;
+    ],
+    &quot;cancelRequested&quot;: false,
+    &quot;statistics&quot;: {
+      &quot;pagesDiscovered&quot;: 10,
+      &quot;testsGenerated&quot;: 26,
+      &quot;testsExecuted&quot;: 26,
+      &quot;passed&quot;: 25,
+      &quot;failed&quot;: 1,
+      &quot;skipped&quot;: 0,
+      &quot;bugs&quot;: 0,
+      &quot;criticalBugs&quot;: 0,
+      &quot;highBugs&quot;: 0,
+      &quot;mediumBugs&quot;: 0,
+      &quot;lowBugs&quot;: 0,
+      &quot;apiRequests&quot;: 74,
+      &quot;apiFailures&quot;: 16,
+      &quot;contentIssues&quot;: 12,
+      &quot;accessibilityIssues&quot;: 32,
+      &quot;performanceWarnings&quot;: 0
+    },
+    &quot;createdAt&quot;: &quot;2026-09-12T16:45:52.044Z&quot;,
+    &quot;updatedAt&quot;: &quot;2026-09-12T16:48:02.783Z&quot;,
+    &quot;__v&quot;: 0,
+    &quot;startedAt&quot;: &quot;2026-09-12T16:45:52.267Z&quot;,
+    &quot;currentStep&quot;: &quot;Finished — Chrome will close shortly&quot;,
+    &quot;currentPage&quot;: &quot;https://mansoon-mitra.web.app/&quot;,
+    &quot;currentTestName&quot;: &quot;Session refresh keeps the user in the authorized application&quot;,
+    &quot;completedAt&quot;: &quot;2026-09-12T16:48:02.783Z&quot;,
+    &quot;healthScore&quot;: 62
+  },
+  &quot;tests&quot;: {
+    &quot;runs&quot;: 2,
+    &quot;executed&quot;: 27,
+    &quot;passed&quot;: 25,
+    &quot;failed&quot;: 2,
+    &quot;passRate&quot;: 93
+  },
+  &quot;bugs&quot;: {
+    &quot;total&quot;: 1,
+    &quot;critical&quot;: 0,
+    &quot;high&quot;: 0,
+    &quot;medium&quot;: 1,
+    &quot;low&quot;: 0,
+    &quot;open&quot;: 1,
+    &quot;criticalItems&quot;: [],
+    &quot;highItems&quot;: []
+  },
+  &quot;apis&quot;: {
+    &quot;total&quot;: 74,
+    &quot;success&quot;: 58,
+    &quot;clientErrors&quot;: 16,
+    &quot;serverErrors&quot;: 0,
+    &quot;networkFailures&quot;: 0,
+    &quot;timeouts&quot;: 0,
+    &quot;avgResponseMs&quot;: 244
+  },
+  &quot;content&quot;: {
+    &quot;total&quot;: 12,
+    &quot;items&quot;: [
+      {
+        &quot;_id&quot;: &quot;6aa582410490ae77f0376e9c&quot;,
+        &quot;projectId&quot;: &quot;6aa57739f09d3d9e607aae3b&quot;,
+        &quot;testRunId&quot;: &quot;6aa581c00490ae77f03766aa&quot;,
+        &quot;pageUrl&quot;: &quot;https://mansoon-mitra.web.app/&quot;,
+        &quot;type&quot;: &quot;inconsistent_label&quot;,
+        &quot;currentText&quot;: &quot;Dashboard&quot;,
+        &quot;suggestedText&quot;: &quot;🌦️Dashboard&quot;,
+        &quot;element&quot;: {
+          &quot;selector&quot;: null,
+          &quot;tag&quot;: null
+        },
+        &quot;severity&quot;: &quot;low&quot;,
+        &quot;confidence&quot;: 0.7,
+        &quot;aiAnalysis&quot;: {
+          &quot;model&quot;: &quot;llama-3.3-70b-versatile&quot;,
+          &quot;explanation&quot;: &quot;Similar labels use inconsistent wording.&quot;
+        },
+        &quot;status&quot;: &quot;open&quot;,
+        &quot;createdAt&quot;: &quot;2026-09-12T16:48:01.071Z&quot;,
+        &quot;updatedAt&quot;: &quot;2026-09-12T16:48:01.071Z&quot;,
+        &quot;__v&quot;: 0
+      },
+      {
+        &quot;_id&quot;: &quot;6aa582410490ae77f0376ea1&quot;,
+        &quot;projectId&quot;: &quot;6aa57739f09d3d9e607aae3b&quot;,
+        &quot;testRunId&quot;: &quot;6aa581c00490ae77f03766aa&quot;,
+        &quot;pageUrl&quot;: &quot;https://mansoon-mitra.web.app/&quot;,
+        &quot;type&quot;: &quot;inconsistent_label&quot;,
+        &quot;currentText&quot;: &quot;My Plan&quot;,
+        &quot;suggestedText&quot;: &quot;📋My Plan&quot;,
+        &quot;element&quot;: {
+          &quot;selector&quot;: null,
+          &quot;tag&quot;: null
+        },
+        &quot;severity&quot;: &quot;low&quot;,
+        &quot;confidence&quot;: 0.7,
+        &quot;aiAnalysis&quot;: {
+          &quot;model&quot;: &quot;llama-3.3-70b-versatile&quot;,
+          &quot;explanation&quot;: &quot;Similar labels use inconsistent wording.&quot;
+        },
+        &quot;status&quot;: &quot;open&quot;,
+        &quot;createdAt&quot;: &quot;2026-09-12T16:48:01.073Z&quot;,
+        &quot;updatedAt&quot;: &quot;2026-09-12T16:48:01.073Z&quot;,
+        &quot;__v&quot;: 0
+      },
+      {
+        &quot;_id&quot;: &quot;6aa582410490ae77f0376ea6&quot;,
+        &quot;projectId&quot;: &quot;6aa57739f09d3d9e607aae3b&quot;,
+        &quot;testRunId&quot;: &quot;6aa581c00490ae77f03766aa&quot;,
+        &quot;pageUrl&quot;: &quot;https://mansoon-mitra.web.app/&quot;,
+        &quot;type&quot;: &quot;inconsistent_label&quot;,
+        &quot;currentText&quot;: &quot;Checklist&quot;,
+        &quot;suggestedText&quot;: &quot;✅Checklist&quot;,
+        &quot;element&quot;: {
+          &quot;selector&quot;: null,
+          &quot;tag&quot;: null
+        },
+        &quot;severity&quot;: &quot;low&quot;,
+        &quot;confidence&quot;: 0.7,
+        &quot;aiAnalysis&quot;: {
+          &quot;model&quot;: &quot;llama-3.3-70b-versatile&quot;,
+          &quot;explanation&quot;: &quot;Similar labels use inconsistent wording.&quot;
+        },
+        &quot;status&quot;: &quot;open&quot;,
+        &quot;createdAt&quot;: &quot;2026-09-12T16:48:01.075Z&quot;,
+        &quot;updatedAt&quot;: &quot;2026-09-12T16:48:01.075Z&quot;,
+        &quot;__v&quot;: 0
+      },
+      {
+        &quot;_id&quot;: &quot;6aa582410490ae77f0376eab&quot;,
+        &quot;projectId&quot;: &quot;6aa57739f09d3d9e607aae3b&quot;,
+        &quot;testRunId&quot;: &quot;6aa581c00490ae77f03766aa&quot;,
+        &quot;pageUrl&quot;: &quot;https://mansoon-mitra.web.app/&quot;,
+        &quot;type&quot;: &quot;inconsistent_label&quot;,
+        &quot;currentText&quot;: &quot;Travel&quot;,
+        &quot;suggestedText&quot;: &quot;🧭Travel&quot;,
+        &quot;element&quot;: {
+          &quot;selector&quot;: null,
+          &quot;tag&quot;: null
+        },
+        &quot;severity&quot;: &quot;low&quot;,
+        &quot;confidence&quot;: 0.7,
+        &quot;aiAnalysis&quot;: {
+          &quot;model&quot;: &quot;llama-3.3-70b-versatile&quot;,
+          &quot;explanation&quot;: &quot;Similar labels use inconsistent wording.&quot;
+        },
+        &quot;status&quot;: &quot;open&quot;,
+        &quot;createdAt&quot;: &quot;2026-09-12T16:48:01.076Z&quot;,
+        &quot;updatedAt&quot;: &quot;2026-09-12T16:48:01.076Z&quot;,
+        &quot;__v&quot;: 0
+      },
+      {
+        &quot;_id&quot;: &quot;6aa582410490ae77f0376eb0&quot;,
+        &quot;projectId&quot;: &quot;6aa57739f09d3d9e607aae3b&quot;,
+        &quot;testRunId&quot;: &quot;6aa581c00490ae77f03766aa&quot;,
+        &quot;pageUrl&quot;: &quot;https://mansoon-mitra.web.app/&quot;,
+        &quot;type&quot;: &quot;inconsistent_label&quot;,
+        &quot;currentText&quot;: &quot;Community&quot;,
+        &quot;suggestedText&quot;: &quot;📍Community&quot;,
+        &quot;element&quot;: {
+          &quot;selector&quot;: null,
+          &quot;tag&quot;: null
+        },
+        &quot;severity&quot;: &quot;low&quot;,
+        &quot;confidence&quot;: 0.7,
+        &quot;aiAnalysis&quot;: {
+          &quot;model&quot;: &quot;llama-3.3-70b-versatile&quot;,
+          &quot;explanation&quot;: &quot;Similar labels use inconsistent wording.&quot;
+        },
+        &quot;status&quot;: &quot;open&quot;,
+        &quot;createdAt&quot;: &quot;2026-09-12T16:48:01.077Z&quot;,
+        &quot;updatedAt&quot;: &quot;2026-09-12T16:48:01.077Z&quot;,
+        &quot;__v&quot;: 0
+      },
+      {
+        &quot;_id&quot;: &quot;6aa582410490ae77f0376eb5&quot;,
+        &quot;projectId&quot;: &quot;6aa57739f09d3d9e607aae3b&quot;,
+        &quot;testRunId&quot;: &quot;6aa581c00490ae77f03766aa&quot;,
+        &quot;pageUrl&quot;: &quot;https://mansoon-mitra.web.app/&quot;,
+        &quot;type&quot;: &quot;inconsistent_label&quot;,
+        &quot;currentText&quot;: &quot;Recovery&quot;,
+        &quot;suggestedText&quot;: &quot;🛠️Recovery&quot;,
+        &quot;element&quot;: {
+          &quot;selector&quot;: null,
+          &quot;tag&quot;: null
+        },
+        &quot;severity&quot;: &quot;low&quot;,
+        &quot;confidence&quot;: 0.7,
+        &quot;aiAnalysis&quot;: {
+          &quot;model&quot;: &quot;llama-3.3-70b-versatile&quot;,
+          &quot;explanation&quot;: &quot;Similar labels use inconsistent wording.&quot;
+        },
+        &quot;status&quot;: &quot;open&quot;,
+        &quot;createdAt&quot;: &quot;2026-09-12T16:48:01.078Z&quot;,
+        &quot;updatedAt&quot;: &quot;2026-09-12T16:48:01.078Z&quot;,
+        &quot;__v&quot;: 0
+      },
+      {
+        &quot;_id&quot;: &quot;6aa582410490ae77f0376eba&quot;,
+        &quot;projectId&quot;: &quot;6aa57739f09d3d9e607aae3b&quot;,
+        &quot;testRunId&quot;: &quot;6aa581c00490ae77f03766aa&quot;,
+        &quot;pageUrl&quot;: &quot;https://mansoon-mitra.web.app/&quot;,
+        &quot;type&quot;: &quot;inconsistent_label&quot;,
+        &quot;currentText&quot;: &quot;Build my plan&quot;,
+        &quot;suggestedText&quot;: &quot;Build my plan →&quot;,
+        &quot;element&quot;: {
+          &quot;selector&quot;: null,
+          &quot;tag&quot;: null
+        },
+        &quot;severity&quot;: &quot;low&quot;,
+        &quot;confidence&quot;: 0.7,
+        &quot;aiAnalysis&quot;: {
+          &quot;model&quot;: &quot;llama-3.3-70b-versatile&quot;,
+          &quot;explanation&quot;: &quot;Similar labels use inconsistent wording.&quot;
+        },
+        &quot;status&quot;: &quot;open&quot;,
+        &quot;createdAt&quot;: &quot;2026-09-12T16:48:01.079Z&quot;,
+        &quot;updatedAt&quot;: &quot;2026-09-12T16:48:01.079Z&quot;,
+        &quot;__v&quot;: 0
+      },
+      {
+        &quot;_id&quot;: &quot;6aa582410490ae77f0376ed3&quot;,
+        &quot;projectId&quot;: &quot;6aa57739f09d3d9e607aae3b&quot;,
+        &quot;testRunId&quot;: &quot;6aa581c00490ae77f03766aa&quot;,
+        &quot;pageUrl&quot;: &quot;https://mansoon-mitra.web.app/community&quot;,
+        &quot;type&quot;: &quot;inconsistent_label&quot;,
+        &quot;currentText&quot;: &quot;Waterlogging&quot;,
+        &quot;suggestedText&quot;: &quot;🌊Waterlogging&quot;,
+        &quot;element&quot;: {
+          &quot;selector&quot;: null,
+          &quot;tag&quot;: null
+        },
+        &quot;severity&quot;: &quot;low&quot;,
+        &quot;confidence&quot;: 0.7,
+        &quot;aiAnalysis&quot;: {
+          &quot;model&quot;: &quot;llama-3.3-70b-versatile&quot;,
+          &quot;explanation&quot;: &quot;Similar labels use inconsistent wording.&quot;
+        },
+        &quot;status&quot;: &quot;open&quot;,
+        &quot;createdAt&quot;: &quot;2026-09-12T16:48:01.091Z&quot;,
+        &quot;updatedAt&quot;: &quot;2026-09-12T16:48:01.091Z&quot;,
+        &quot;__v&quot;: 0
+      },
+      {
+        &quot;_id&quot;: &quot;6aa582410490ae77f0376ed8&quot;,
+        &quot;projectId&quot;: &quot;6aa57739f09d3d9e607aae3b&quot;,
+        &quot;testRunId&quot;: &quot;6aa581c00490ae77f03766aa&quot;,
+        &quot;pageUrl&quot;: &quot;https://mansoon-mitra.web.app/community&quot;,
+        &quot;type&quot;: &quot;inconsistent_label&quot;,
+        &quot;currentText&quot;: &quot;Tree down&quot;,
+        &quot;suggestedText&quot;: &quot;🌳Tree down&quot;,
+        &quot;element&quot;: {
+          &quot;selector&quot;: null,
+          &quot;tag&quot;: null
+        },
+        &quot;severity&quot;: &quot;low&quot;,
+        &quot;confidence&quot;: 0.7,
+        &quot;aiAnalysis&quot;: {
+          &quot;model&quot;: &quot;llama-3.3-70b-versatile&quot;,
+          &quot;explanation&quot;: &quot;Similar labels use inconsistent wording.&quot;
+        },
+        &quot;status&quot;: &quot;open&quot;,
+        &quot;createdAt&quot;: &quot;2026-09-12T16:48:01.092Z&quot;,
+        &quot;updatedAt&quot;: &quot;2026-09-12T16:48:01.092Z&quot;,
+        &quot;__v&quot;: 0
+      },
+      {
+        &quot;_id&quot;: &quot;6aa582410490ae77f0376edd&quot;,
+        &quot;projectId&quot;: &quot;6aa57739f09d3d9e607aae3b&quot;,
+        &quot;testRunId&quot;: &quot;6aa581c00490ae77f03766aa&quot;,
+        &quot;pageUrl&quot;: &quot;https://mansoon-mitra.web.app/community&quot;,
+        &quot;type&quot;: &quot;inconsistent_label&quot;,
+        &quot;currentText&quot;: &quot;Power outage&quot;,
+        &quot;suggestedText&quot;: &quot;⚡Power outage&quot;,
+        &quot;element&quot;: {
+          &quot;selector&quot;: null,
+          &quot;tag&quot;: null
+        },
+        &quot;severity&quot;: &quot;low&quot;,
+        &quot;confidence&quot;: 0.7,
+        &quot;aiAnalysis&quot;: {
+          &quot;model&quot;: &quot;llama-3.3-70b-versatile&quot;,
+          &quot;explanation&quot;: &quot;Similar labels use inconsistent wording.&quot;
+        },
+        &quot;status&quot;: &quot;open&quot;,
+        &quot;createdAt&quot;: &quot;2026-09-12T16:48:01.093Z&quot;,
+        &quot;updatedAt&quot;: &quot;2026-09-12T16:48:01.093Z&quot;,
+        &quot;__v&quot;: 0
+      },
+      {
+        &quot;_id&quot;: &quot;6aa582410490ae77f0376ee2&quot;,
+        &quot;projectId&quot;: &quot;6aa57739f09d3d9e607aae3b&quot;,
+        &quot;testRunId&quot;: &quot;6aa581c00490ae77f03766aa&quot;,
+        &quot;pageUrl&quot;: &quot;https://mansoon-mitra.web.app/community&quot;,
+        &quot;type&quot;: &quot;inconsistent_label&quot;,
+        &quot;currentText&quot;: &quot;Road blocked&quot;,
+        &quot;suggestedText&quot;: &quot;🚧Road blocked&quot;,
+        &quot;element&quot;: {
+          &quot;selector&quot;: null,
+          &quot;tag&quot;: null
+        },
+        &quot;severity&quot;: &quot;low&quot;,
+        &quot;confidence&quot;: 0.7,
+        &quot;aiAnalysis&quot;: {
+          &quot;model&quot;: &quot;llama-3.3-70b-versatile&quot;,
+          &quot;explanation&quot;: &quot;Similar labels use inconsistent wording.&quot;
+        },
+        &quot;status&quot;: &quot;open&quot;,
+        &quot;createdAt&quot;: &quot;2026-09-12T16:48:01.093Z&quot;,
+        &quot;updatedAt&quot;: &quot;2026-09-12T16:48:01.093Z&quot;,
+        &quot;__v&quot;: 0
+      },
+      {
+        &quot;_id&quot;: &quot;6aa582410490ae77f0376ee7&quot;,
+        &quot;projectId&quot;: &quot;6aa57739f09d3d9e607aae3b&quot;,
+        &quot;testRunId&quot;: &quot;6aa581c00490ae77f03766aa&quot;,
+        &quot;pageUrl&quot;: &quot;https://mansoon-mitra.web.app/community&quot;,
+        &quot;type&quot;: &quot;inconsistent_label&quot;,
+        &quot;currentText&quot;: &quot;Other&quot;,
+        &quot;suggestedText&quot;: &quot;⚠️Other&quot;,
+        &quot;element&quot;: {
+          &quot;selector&quot;: null,
+          &quot;tag&quot;: null
+        },
+        &quot;severity&quot;: &quot;low&quot;,
+        &quot;confidence&quot;: 0.7,
+        &quot;aiAnalysis&quot;: {
+          &quot;model&quot;: &quot;llama-3.3-70b-versatile&quot;,
+          &quot;explanation&quot;: &quot;Similar labels use inconsistent wording.&quot;
+        },
+        &quot;status&quot;: &quot;open&quot;,
+        &quot;createdAt&quot;: &quot;2026-09-12T16:48:01.094Z&quot;,
+        &quot;updatedAt&quot;: &quot;2026-09-12T16:48:01.094Z&quot;,
+        &quot;__v&quot;: 0
+      }
+    ]
+  },
+  &quot;accessibility&quot;: {
+    &quot;total&quot;: 32,
+    &quot;items&quot;: [
+      {
+        &quot;_id&quot;: &quot;6aa582420490ae77f0376efe&quot;,
+        &quot;projectId&quot;: &quot;6aa57739f09d3d9e607aae3b&quot;,
+        &quot;testRunId&quot;: &quot;6aa581c00490ae77f03766aa&quot;,
+        &quot;pageUrl&quot;: &quot;https://mansoon-mitra.web.app/&quot;,
+        &quot;ruleId&quot;: &quot;image-alt&quot;,
+        &quot;impact&quot;: &quot;serious&quot;,
+        &quot;description&quot;: &quot;Image is missing alternative text&quot;,
+        &quot;help&quot;: &quot;Add a meaningful alt attribute to convey the image purpose.&quot;,
+        &quot;selector&quot;: &quot;img&quot;,
+        &quot;html&quot;: &quot;&lt;img src=\&quot;/favicon.svg\&quot; alt=\&quot;\&quot; class=\&quot;h-9 w-9 drop-shadow\&quot;&gt;&quot;,
+        &quot;status&quot;: &quot;open&quot;,
+        &quot;createdAt&quot;: &quot;2026-09-12T16:48:02.220Z&quot;,
+        &quot;updatedAt&quot;: &quot;2026-09-12T16:48:02.220Z&quot;,
+        &quot;__v&quot;: 0
+      },
+      {
+        &quot;_id&quot;: &quot;6aa582420490ae77f0376f03&quot;,
+        &quot;projectId&quot;: &quot;6aa57739f09d3d9e607aae3b&quot;,
+        &quot;testRunId&quot;: &quot;6aa581c00490ae77f03766aa&quot;,
+        &quot;pageUrl&quot;: &quot;https://mansoon-mitra.web.app/&quot;,
+        &quot;ruleId&quot;: &quot;image-alt&quot;,
+        &quot;impact&quot;: &quot;serious&quot;,
+        &quot;description&quot;: &quot;Image is missing alternative text&quot;,
+        &quot;help&quot;: &quot;Add a meaningful alt attribute to convey the image purpose.&quot;,
+        &quot;selector&quot;: &quot;img&quot;,
+        &quot;html&quot;: &quot;&lt;img src=\&quot;/favicon.svg\&quot; alt=\&quot;\&quot; class=\&quot;h-8 w-8\&quot;&gt;&quot;,
+        &quot;status&quot;: &quot;open&quot;,
+        &quot;createdAt&quot;: &quot;2026-09-12T16:48:02.223Z&quot;,
+        &quot;updatedAt&quot;: &quot;2026-09-12T16:48:02.223Z&quot;,
+        &quot;__v&quot;: 0
+      },
+      {
+        &quot;_id&quot;: &quot;6aa582420490ae77f0376f08&quot;,
+        &quot;projectId&quot;: &quot;6aa57739f09d3d9e607aae3b&quot;,
+        &quot;testRunId&quot;: &quot;6aa581c00490ae77f03766aa&quot;,
+        &quot;pageUrl&quot;: &quot;https://mansoon-mitra.web.app/&quot;,
+        &quot;ruleId&quot;: &quot;heading-order&quot;,
+        &quot;impact&quot;: &quot;moderate&quot;,
+        &quot;description&quot;: &quot;Heading levels skip a rank&quot;,
+        &quot;help&quot;: &quot;Keep heading hierarchy sequential.&quot;,
+        &quot;status&quot;: &quot;open&quot;,
+        &quot;createdAt&quot;: &quot;2026-09-12T16:48:02.225Z&quot;,
+        &quot;updatedAt&quot;: &quot;2026-09-12T16:48:02.225Z&quot;,
+        &quot;__v&quot;: 0
+      },
+      {
+        &quot;_id&quot;: &quot;6aa582420490ae77f0376f0d&quot;,
+        &quot;projectId&quot;: &quot;6aa57739f09d3d9e607aae3b&quot;,
+        &quot;testRunId&quot;: &quot;6aa581c00490ae77f03766aa&quot;,
+        &quot;pageUrl&quot;: &quot;https://mansoon-mitra.web.app/dashboard&quot;,
+        &quot;ruleId&quot;: &quot;image-alt&quot;,
+        &quot;impact&quot;: &quot;serious&quot;,
+        &quot;description&quot;: &quot;Image is missing alternative text&quot;,
+        &quot;help&quot;: &quot;Add a meaningful alt attribute to convey the image purpose.&quot;,
+        &quot;selector&quot;: &quot;img&quot;,
+        &quot;html&quot;: &quot;&lt;img src=\&quot;/favicon.svg\&quot; alt=\&quot;\&quot; class=\&quot;h-9 w-9 drop-shadow\&quot;&gt;&quot;,
+        &quot;status&quot;: &quot;open&quot;,
+        &quot;createdAt&quot;: &quot;2026-09-12T16:48:02.292Z&quot;,
+        &quot;updatedAt&quot;: &quot;2026-09-12T16:48:02.292Z&quot;,
+        &quot;__v&quot;: 0
+      },
+      {
+        &quot;_id&quot;: &quot;6aa582420490ae77f0376f12&quot;,
+        &quot;projectId&quot;: &quot;6aa57739f09d3d9e607aae3b&quot;,
+        &quot;testRunId&quot;: &quot;6aa581c00490ae77f03766aa&quot;,
+        &quot;pageUrl&quot;: &quot;https://mansoon-mitra.web.app/dashboard&quot;,
+        &quot;ruleId&quot;: &quot;image-alt&quot;,
+        &quot;impact&quot;: &quot;serious&quot;,
+        &quot;description&quot;: &quot;Image is missing alternative text&quot;,
+        &quot;help&quot;: &quot;Add a meaningful alt attribute to convey the image purpose.&quot;,
+        &quot;selector&quot;: &quot;img&quot;,
+        &quot;html&quot;: &quot;&lt;img src=\&quot;/favicon.svg\&quot; alt=\&quot;\&quot; class=\&quot;h-8 w-8\&quot;&gt;&quot;,
+        &quot;status&quot;: &quot;open&quot;,
+        &quot;createdAt&quot;: &quot;2026-09-12T16:48:02.294Z&quot;,
+        &quot;updatedAt&quot;: &quot;2026-09-12T16:48:02.294Z&quot;,
+        &quot;__v&quot;: 0
+      },
+      {
+        &quot;_id&quot;: &quot;6aa582420490ae77f0376f17&quot;,
+        &quot;projectId&quot;: &quot;6aa57739f09d3d9e607aae3b&quot;,
+        &quot;testRunId&quot;: &quot;6aa581c00490ae77f03766aa&quot;,
+        &quot;pageUrl&quot;: &quot;https://mansoon-mitra.web.app/plan&quot;,
+        &quot;ruleId&quot;: &quot;image-alt&quot;,
+        &quot;impact&quot;: &quot;serious&quot;,
+        &quot;description&quot;: &quot;Image is missing alternative text&quot;,
+        &quot;help&quot;: &quot;Add a meaningful alt attribute to convey the image purpose.&quot;,
+        &quot;selector&quot;: &quot;img&quot;,
+        &quot;html&quot;: &quot;&lt;img src=\&quot;/favicon.svg\&quot; alt=\&quot;\&quot; class=\&quot;h-9 w-9 drop-shadow\&quot;&gt;&quot;,
+        &quot;status&quot;: &quot;open&quot;,
+        &quot;createdAt&quot;: &quot;2026-09-12T16:48:02.339Z&quot;,
+        &quot;updatedAt&quot;: &quot;2026-09-12T16:48:02.339Z&quot;,
+        &quot;__v&quot;: 0
+      },
+      {
+        &quot;_id&quot;: &quot;6aa582420490ae77f0376f1c&quot;,
+        &quot;projectId&quot;: &quot;6aa57739f09d3d9e607aae3b&quot;,
+        &quot;testRunId&quot;: &quot;6aa581c00490ae77f03766aa&quot;,
+        &quot;pageUrl&quot;: &quot;https://mansoon-mitra.web.app/plan&quot;,
+        &quot;ruleId&quot;: &quot;image-alt&quot;,
+        &quot;impact&quot;: &quot;serious&quot;,
+        &quot;description&quot;: &quot;Image is missing alternative text&quot;,
+        &quot;help&quot;: &quot;Add a meaningful alt attribute to convey the image purpose.&quot;,
+        &quot;selector&quot;: &quot;img&quot;,
+        &quot;html&quot;: &quot;&lt;img src=\&quot;/favicon.svg\&quot; alt=\&quot;\&quot; class=\&quot;h-8 w-8\&quot;&gt;&quot;,
+        &quot;status&quot;: &quot;open&quot;,
+        &quot;createdAt&quot;: &quot;2026-09-12T16:48:02.341Z&quot;,
+        &quot;updatedAt&quot;: &quot;2026-09-12T16:48:02.341Z&quot;,
+        &quot;__v&quot;: 0
+      },
+      {
+        &quot;_id&quot;: &quot;6aa582420490ae77f0376f21&quot;,
+        &quot;projectId&quot;: &quot;6aa57739f09d3d9e607aae3b&quot;,
+        &quot;testRunId&quot;: &quot;6aa581c00490ae77f03766aa&quot;,
+        &quot;pageUrl&quot;: &quot;https://mansoon-mitra.web.app/checklist&quot;,
+        &quot;ruleId&quot;: &quot;image-alt&quot;,
+        &quot;impact&quot;: &quot;serious&quot;,
+        &quot;description&quot;: &quot;Image is missing alternative text&quot;,
+        &quot;help&quot;: &quot;Add a meaningful alt attribute to convey the image purpose.&quot;,
+        &quot;selector&quot;: &quot;img&quot;,
+        &quot;html&quot;: &quot;&lt;img src=\&quot;/favicon.svg\&quot; alt=\&quot;\&quot; class=\&quot;h-9 w-9 drop-shadow\&quot;&gt;&quot;,
+        &quot;status&quot;: &quot;open&quot;,
+        &quot;createdAt&quot;: &quot;2026-09-12T16:48:02.399Z&quot;,
+        &quot;updatedAt&quot;: &quot;2026-09-12T16:48:02.399Z&quot;,
+        &quot;__v&quot;: 0
+      },
+      {
+        &quot;_id&quot;: &quot;6aa582420490ae77f0376f26&quot;,
+        &quot;projectId&quot;: &quot;6aa57739f09d3d9e607aae3b&quot;,
+        &quot;testRunId&quot;: &quot;6aa581c00490ae77f03766aa&quot;,
+        &quot;pageUrl&quot;: &quot;https://mansoon-mitra.web.app/checklist&quot;,
+        &quot;ruleId&quot;: &quot;image-alt&quot;,
+        &quot;impact&quot;: &quot;serious&quot;,
+        &quot;description&quot;: &quot;Image is missing alternative text&quot;,
+        &quot;help&quot;: &quot;Add a meaningful alt attribute to convey the image purpose.&quot;,
+        &quot;selector&quot;: &quot;img&quot;,
+        &quot;html&quot;: &quot;&lt;img src=\&quot;/favicon.svg\&quot; alt=\&quot;\&quot; class=\&quot;h-8 w-8\&quot;&gt;&quot;,
+        &quot;status&quot;: &quot;open&quot;,
+        &quot;createdAt&quot;: &quot;2026-09-12T16:48:02.400Z&quot;,
+        &quot;updatedAt&quot;: &quot;2026-09-12T16:48:02.400Z&quot;,
+        &quot;__v&quot;: 0
+      },
+      {
+        &quot;_id&quot;: &quot;6aa582420490ae77f0376f2b&quot;,
+        &quot;projectId&quot;: &quot;6aa57739f09d3d9e607aae3b&quot;,
+        &quot;testRunId&quot;: &quot;6aa581c00490ae77f03766aa&quot;,
+        &quot;pageUrl&quot;: &quot;https://mansoon-mitra.web.app/checklist&quot;,
+        &quot;ruleId&quot;: &quot;label&quot;,
+        &quot;impact&quot;: &quot;critical&quot;,
+        &quot;description&quot;: &quot;Form control is missing an accessible name&quot;,
+        &quot;help&quot;: &quot;Associate a label or aria-label with this control.&quot;,
+        &quot;selector&quot;: &quot;input&quot;,
+        &quot;html&quot;: &quot;&lt;input type=\&quot;number\&quot; min=\&quot;1\&quot; class=\&quot;input\&quot; value=\&quot;3\&quot;&gt;&quot;,
+        &quot;status&quot;: &quot;open&quot;,
+        &quot;createdAt&quot;: &quot;2026-09-12T16:48:02.401Z&quot;,
+        &quot;updatedAt&quot;: &quot;2026-09-12T16:48:02.401Z&quot;,
+        &quot;__v&quot;: 0
+      },
+      {
+        &quot;_id&quot;: &quot;6aa582420490ae77f0376f30&quot;,
+        &quot;projectId&quot;: &quot;6aa57739f09d3d9e607aae3b&quot;,
+        &quot;testRunId&quot;: &quot;6aa581c00490ae77f03766aa&quot;,
+        &quot;pageUrl&quot;: &quot;https://mansoon-mitra.web.app/checklist&quot;,
+        &quot;ruleId&quot;: &quot;label&quot;,
+        &quot;impact&quot;: &quot;critical&quot;,
+        &quot;description&quot;: &quot;Form control is missing an accessible name&quot;,
+        &quot;help&quot;: &quot;Associate a label or aria-label with this control.&quot;,
+        &quot;selector&quot;: &quot;input&quot;,
+        &quot;html&quot;: &quot;&lt;input class=\&quot;input\&quot; placeholder=\&quot;Mumbai\&quot; value=\&quot;\&quot;&gt;&quot;,
+        &quot;status&quot;: &quot;open&quot;,
+        &quot;createdAt&quot;: &quot;2026-09-12T16:48:02.402Z&quot;,
+        &quot;updatedAt&quot;: &quot;2026-09-12T16:48:02.402Z&quot;,
+        &quot;__v&quot;: 0
+      },
+      {
+        &quot;_id&quot;: &quot;6aa582420490ae77f0376f35&quot;,
+        &quot;projectId&quot;: &quot;6aa57739f09d3d9e607aae3b&quot;,
+        &quot;testRunId&quot;: &quot;6aa581c00490ae77f03766aa&quot;,
+        &quot;pageUrl&quot;: &quot;https://mansoon-mitra.web.app/checklist&quot;,
+        &quot;ruleId&quot;: &quot;label&quot;,
+        &quot;impact&quot;: &quot;critical&quot;,
+        &quot;description&quot;: &quot;Form control is missing an accessible name&quot;,
+        &quot;help&quot;: &quot;Associate a label or aria-label with this control.&quot;,
+        &quot;selector&quot;: &quot;select&quot;,
+        &quot;html&quot;: &quot;&lt;select class=\&quot;input\&quot;&gt;&lt;option value=\&quot;light\&quot;&gt;Light&lt;/option&gt;&lt;option value=\&quot;heavy\&quot;&gt;Heavy&lt;/option&gt;&lt;option value=\&quot;extreme\&quot;&gt;Extreme&lt;/option&gt;&lt;/select&gt;&quot;,
+        &quot;status&quot;: &quot;open&quot;,
+        &quot;createdAt&quot;: &quot;2026-09-12T16:48:02.403Z&quot;,
+        &quot;updatedAt&quot;: &quot;2026-09-12T16:48:02.403Z&quot;,
+        &quot;__v&quot;: 0
+      },
+      {
+        &quot;_id&quot;: &quot;6aa582420490ae77f0376f3a&quot;,
+        &quot;projectId&quot;: &quot;6aa57739f09d3d9e607aae3b&quot;,
+        &quot;testRunId&quot;: &quot;6aa581c00490ae77f03766aa&quot;,
+        &quot;pageUrl&quot;: &quot;https://mansoon-mitra.web.app/travel&quot;,
+        &quot;ruleId&quot;: &quot;image-alt&quot;,
+        &quot;impact&quot;: &quot;serious&quot;,
+        &quot;description&quot;: &quot;Image is missing alternative text&quot;,
+        &quot;help&quot;: &quot;Add a meaningful alt attribute to convey the image purpose.&quot;,
+        &quot;selector&quot;: &quot;img&quot;,
+        &quot;html&quot;: &quot;&lt;img src=\&quot;/favicon.svg\&quot; alt=\&quot;\&quot; class=\&quot;h-9 w-9 drop-shadow\&quot;&gt;&quot;,
+        &quot;status&quot;: &quot;open&quot;,
+        &quot;createdAt&quot;: &quot;2026-09-12T16:48:02.474Z&quot;,
+        &quot;updatedAt&quot;: &quot;2026-09-12T16:48:02.474Z&quot;,
+        &quot;__v&quot;: 0
+      },
+      {
+        &quot;_id&quot;: &quot;6aa582420490ae77f0376f3f&quot;,
+        &quot;projectId&quot;: &quot;6aa57739f09d3d9e607aae3b&quot;,
+        &quot;testRunId&quot;: &quot;6aa581c00490ae77f03766aa&quot;,
+        &quot;pageUrl&quot;: &quot;https://mansoon-mitra.web.app/travel&quot;,
+        &quot;ruleId&quot;: &quot;image-alt&quot;,
+        &quot;impact&quot;: &quot;serious&quot;,
+        &quot;description&quot;: &quot;Image is missing alternative text&quot;,
+        &quot;help&quot;: &quot;Add a meaningful alt attribute to convey the image purpose.&quot;,
+        &quot;selector&quot;: &quot;img&quot;,
+        &quot;html&quot;: &quot;&lt;img src=\&quot;/favicon.svg\&quot; alt=\&quot;\&quot; class=\&quot;h-8 w-8\&quot;&gt;&quot;,
+        &quot;status&quot;: &quot;open&quot;,
+        &quot;createdAt&quot;: &quot;2026-09-12T16:48:02.476Z&quot;,
+        &quot;updatedAt&quot;: &quot;2026-09-12T16:48:02.476Z&quot;,
+        &quot;__v&quot;: 0
+      },
+      {
+        &quot;_id&quot;: &quot;6aa582420490ae77f0376f44&quot;,
+        &quot;projectId&quot;: &quot;6aa57739f09d3d9e607aae3b&quot;,
+        &quot;testRunId&quot;: &quot;6aa581c00490ae77f03766aa&quot;,
+        &quot;pageUrl&quot;: &quot;https://mansoon-mitra.web.app/travel&quot;,
+        &quot;ruleId&quot;: &quot;label&quot;,
+        &quot;impact&quot;: &quot;critical&quot;,
+        &quot;description&quot;: &quot;Form control is missing an accessible name&quot;,
+        &quot;help&quot;: &quot;Associate a label or aria-label with this control.&quot;,
+        &quot;selector&quot;: &quot;input&quot;,
+        &quot;html&quot;: &quot;&lt;input type=\&quot;datetime-local\&quot; class=\&quot;input\&quot; value=\&quot;\&quot;&gt;&quot;,
+        &quot;status&quot;: &quot;open&quot;,
+        &quot;createdAt&quot;: &quot;2026-09-12T16:48:02.477Z&quot;,
+        &quot;updatedAt&quot;: &quot;2026-09-12T16:48:02.477Z&quot;,
+        &quot;__v&quot;: 0
+      },
+      {
+        &quot;_id&quot;: &quot;6aa582420490ae77f0376f49&quot;,
+        &quot;projectId&quot;: &quot;6aa57739f09d3d9e607aae3b&quot;,
+        &quot;testRunId&quot;: &quot;6aa581c00490ae77f03766aa&quot;,
+        &quot;pageUrl&quot;: &quot;https://mansoon-mitra.web.app/travel&quot;,
+        &quot;ruleId&quot;: &quot;label&quot;,
+        &quot;impact&quot;: &quot;critical&quot;,
+        &quot;description&quot;: &quot;Form control is missing an accessible name&quot;,
+        &quot;help&quot;: &quot;Associate a label or aria-label with this control.&quot;,
+        &quot;selector&quot;: &quot;select&quot;,
+        &quot;html&quot;: &quot;&lt;select class=\&quot;input\&quot;&gt;&lt;option value=\&quot;car\&quot;&gt;Car&lt;/option&gt;&lt;option value=\&quot;bike\&quot;&gt;Two-wheeler&lt;/option&gt;&lt;option value=\&quot;transit\&quot;&gt;Public transit&lt;/option&gt;&lt;option value=\&quot;walk\&quot;&gt;Walk&lt;/option&gt;&lt;/select&gt;&quot;,
+        &quot;status&quot;: &quot;open&quot;,
+        &quot;createdAt&quot;: &quot;2026-09-12T16:48:02.478Z&quot;,
+        &quot;updatedAt&quot;: &quot;2026-09-12T16:48:02.478Z&quot;,
+        &quot;__v&quot;: 0
+      },
+      {
+        &quot;_id&quot;: &quot;6aa582420490ae77f0376f4e&quot;,
+        &quot;projectId&quot;: &quot;6aa57739f09d3d9e607aae3b&quot;,
+        &quot;testRunId&quot;: &quot;6aa581c00490ae77f03766aa&quot;,
+        &quot;pageUrl&quot;: &quot;https://mansoon-mitra.web.app/community&quot;,
+        &quot;ruleId&quot;: &quot;image-alt&quot;,
+        &quot;impact&quot;: &quot;serious&quot;,
+        &quot;description&quot;: &quot;Image is missing alternative text&quot;,
+        &quot;help&quot;: &quot;Add a meaningful alt attribute to convey the image purpose.&quot;,
+        &quot;selector&quot;: &quot;img&quot;,
+        &quot;html&quot;: &quot;&lt;img src=\&quot;/favicon.svg\&quot; alt=\&quot;\&quot; class=\&quot;h-9 w-9 drop-shadow\&quot;&gt;&quot;,
+        &quot;status&quot;: &quot;open&quot;,
+        &quot;createdAt&quot;: &quot;2026-09-12T16:48:02.572Z&quot;,
+        &quot;updatedAt&quot;: &quot;2026-09-12T16:48:02.572Z&quot;,
+        &quot;__v&quot;: 0
+      },
+      {
+        &quot;_id&quot;: &quot;6aa582420490ae77f0376f53&quot;,
+        &quot;projectId&quot;: &quot;6aa57739f09d3d9e607aae3b&quot;,
+        &quot;testRunId&quot;: &quot;6aa581c00490ae77f03766aa&quot;,
+        &quot;pageUrl&quot;: &quot;https://mansoon-mitra.web.app/community&quot;,
+        &quot;ruleId&quot;: &quot;image-alt&quot;,
+        &quot;impact&quot;: &quot;serious&quot;,
+        &quot;description&quot;: &quot;Image is missing alternative text&quot;,
+        &quot;help&quot;: &quot;Add a meaningful alt attribute to convey the image purpose.&quot;,
+        &quot;selector&quot;: &quot;img&quot;,
+        &quot;html&quot;: &quot;&lt;img src=\&quot;/favicon.svg\&quot; alt=\&quot;\&quot; class=\&quot;h-8 w-8\&quot;&gt;&quot;,
+        &quot;status&quot;: &quot;open&quot;,
+        &quot;createdAt&quot;: &quot;2026-09-12T16:48:02.575Z&quot;,
+        &quot;updatedAt&quot;: &quot;2026-09-12T16:48:02.575Z&quot;,
+        &quot;__v&quot;: 0
+      },
+      {
+        &quot;_id&quot;: &quot;6aa582420490ae77f0376f58&quot;,
+        &quot;projectId&quot;: &quot;6aa57739f09d3d9e607aae3b&quot;,
+        &quot;testRunId&quot;: &quot;6aa581c00490ae77f03766aa&quot;,
+        &quot;pageUrl&quot;: &quot;https://mansoon-mitra.web.app/community&quot;,
+        &quot;ruleId&quot;: &quot;image-alt&quot;,
+        &quot;impact&quot;: &quot;serious&quot;,
+        &quot;description&quot;: &quot;Image is missing alternative text&quot;,
+        &quot;help&quot;: &quot;Add a meaningful alt attribute to convey the image purpose.&quot;,
+        &quot;selector&quot;: &quot;img&quot;,
+        &quot;html&quot;: &quot;&lt;img alt=\&quot;\&quot; src=\&quot;https://b.tile.openstreetmap.org/12/2876/1826.png\&quot; class=\&quot;leaflet-tile\&quot; style=\&quot;width: 256px; height: 256px; transform: translate3d(24px, -3px, 0px);\&quot;&gt;&quot;,
+        &quot;status&quot;: &quot;open&quot;,
+        &quot;createdAt&quot;: &quot;2026-09-12T16:48:02.576Z&quot;,
+        &quot;updatedAt&quot;: &quot;2026-09-12T16:48:02.576Z&quot;,
+        &quot;__v&quot;: 0
+      },
+      {
+        &quot;_id&quot;: &quot;6aa582420490ae77f0376f5d&quot;,
+        &quot;projectId&quot;: &quot;6aa57739f09d3d9e607aae3b&quot;,
+        &quot;testRunId&quot;: &quot;6aa581c00490ae77f03766aa&quot;,
+        &quot;pageUrl&quot;: &quot;https://mansoon-mitra.web.app/community&quot;,
+        &quot;ruleId&quot;: &quot;image-alt&quot;,
+        &quot;impact&quot;: &quot;serious&quot;,
+        &quot;description&quot;: &quot;Image is missing alternative text&quot;,
+        &quot;help&quot;: &quot;Add a meaningful alt attribute to convey the image purpose.&quot;,
+        &quot;selector&quot;: &quot;img&quot;,
+        &quot;html&quot;: &quot;&lt;img alt=\&quot;\&quot; src=\&quot;https://c.tile.openstreetmap.org/12/2877/1826.png\&quot; class=\&quot;leaflet-tile\&quot; style=\&quot;width: 256px; height: 256px; transform: translate3d(280px, -3px, 0px);\&quot;&gt;&quot;,
+        &quot;status&quot;: &quot;open&quot;,
+        &quot;createdAt&quot;: &quot;2026-09-12T16:48:02.580Z&quot;,
+        &quot;updatedAt&quot;: &quot;2026-09-12T16:48:02.580Z&quot;,
+        &quot;__v&quot;: 0
+      },
+      {
+        &quot;_id&quot;: &quot;6aa582420490ae77f0376f62&quot;,
+        &quot;projectId&quot;: &quot;6aa57739f09d3d9e607aae3b&quot;,
+        &quot;testRunId&quot;: &quot;6aa581c00490ae77f03766aa&quot;,
+        &quot;pageUrl&quot;: &quot;https://mansoon-mitra.web.app/community&quot;,
+        &quot;ruleId&quot;: &quot;image-alt&quot;,
+        &quot;impact&quot;: &quot;serious&quot;,
+        &quot;description&quot;: &quot;Image is missing alternative text&quot;,
+        &quot;help&quot;: &quot;Add a meaningful alt attribute to convey the image purpose.&quot;,
+        &quot;selector&quot;: &quot;img&quot;,
+        &quot;html&quot;: &quot;&lt;img alt=\&quot;\&quot; src=\&quot;https://c.tile.openstreetmap.org/12/2876/1827.png\&quot; class=\&quot;leaflet-tile\&quot; style=\&quot;width: 256px; height: 256px; transform: translate3d(24px, 253px, 0px);\&quot;&gt;&quot;,
+        &quot;status&quot;: &quot;open&quot;,
+        &quot;createdAt&quot;: &quot;2026-09-12T16:48:02.581Z&quot;,
+        &quot;updatedAt&quot;: &quot;2026-09-12T16:48:02.581Z&quot;,
+        &quot;__v&quot;: 0
+      },
+      {
+        &quot;_id&quot;: &quot;6aa582420490ae77f0376f67&quot;,
+        &quot;projectId&quot;: &quot;6aa57739f09d3d9e607aae3b&quot;,
+        &quot;testRunId&quot;: &quot;6aa581c00490ae77f03766aa&quot;,
+        &quot;pageUrl&quot;: &quot;https://mansoon-mitra.web.app/community&quot;,
+        &quot;ruleId&quot;: &quot;image-alt&quot;,
+        &quot;impact&quot;: &quot;serious&quot;,
+        &quot;description&quot;: &quot;Image is missing alternative text&quot;,
+        &quot;help&quot;: &quot;Add a meaningful alt attribute to convey the image purpose.&quot;,
+        &quot;selector&quot;: &quot;img&quot;,
+        &quot;html&quot;: &quot;&lt;img alt=\&quot;\&quot; src=\&quot;https://a.tile.openstreetmap.org/12/2877/1827.png\&quot; class=\&quot;leaflet-tile\&quot; style=\&quot;width: 256px; height: 256px; transform: translate3d(280px, 253px, 0px);\&quot;&gt;&quot;,
+        &quot;status&quot;: &quot;open&quot;,
+        &quot;createdAt&quot;: &quot;2026-09-12T16:48:02.582Z&quot;,
+        &quot;updatedAt&quot;: &quot;2026-09-12T16:48:02.582Z&quot;,
+        &quot;__v&quot;: 0
+      },
+      {
+        &quot;_id&quot;: &quot;6aa582420490ae77f0376f6c&quot;,
+        &quot;projectId&quot;: &quot;6aa57739f09d3d9e607aae3b&quot;,
+        &quot;testRunId&quot;: &quot;6aa581c00490ae77f03766aa&quot;,
+        &quot;pageUrl&quot;: &quot;https://mansoon-mitra.web.app/community&quot;,
+        &quot;ruleId&quot;: &quot;image-alt&quot;,
+        &quot;impact&quot;: &quot;serious&quot;,
+        &quot;description&quot;: &quot;Image is missing alternative text&quot;,
+        &quot;help&quot;: &quot;Add a meaningful alt attribute to convey the image purpose.&quot;,
+        &quot;selector&quot;: &quot;img&quot;,
+        &quot;html&quot;: &quot;&lt;img alt=\&quot;\&quot; src=\&quot;https://a.tile.openstreetmap.org/12/2875/1826.png\&quot; class=\&quot;leaflet-tile\&quot; style=\&quot;width: 256px; height: 256px; transform: translate3d(-232px, -3px, 0px);\&quot;&gt;&quot;,
+        &quot;status&quot;: &quot;open&quot;,
+        &quot;createdAt&quot;: &quot;2026-09-12T16:48:02.583Z&quot;,
+        &quot;updatedAt&quot;: &quot;2026-09-12T16:48:02.583Z&quot;,
+        &quot;__v&quot;: 0
+      },
+      {
+        &quot;_id&quot;: &quot;6aa582420490ae77f0376f71&quot;,
+        &quot;projectId&quot;: &quot;6aa57739f09d3d9e607aae3b&quot;,
+        &quot;testRunId&quot;: &quot;6aa581c00490ae77f03766aa&quot;,
+        &quot;pageUrl&quot;: &quot;https://mansoon-mitra.web.app/community&quot;,
+        &quot;ruleId&quot;: &quot;image-alt&quot;,
+        &quot;impact&quot;: &quot;serious&quot;,
+        &quot;description&quot;: &quot;Image is missing alternative text&quot;,
+        &quot;help&quot;: &quot;Add a meaningful alt attribute to convey the image purpose.&quot;,
+        &quot;selector&quot;: &quot;img&quot;,
+        &quot;html&quot;: &quot;&lt;img alt=\&quot;\&quot; src=\&quot;https://a.tile.openstreetmap.org/12/2878/1826.png\&quot; class=\&quot;leaflet-tile\&quot; style=\&quot;width: 256px; height: 256px; transform: translate3d(536px, -3px, 0px);\&quot;&gt;&quot;,
+        &quot;status&quot;: &quot;open&quot;,
+        &quot;createdAt&quot;: &quot;2026-09-12T16:48:02.584Z&quot;,
+        &quot;updatedAt&quot;: &quot;2026-09-12T16:48:02.584Z&quot;,
+        &quot;__v&quot;: 0
+      },
+      {
+        &quot;_id&quot;: &quot;6aa582420490ae77f0376f76&quot;,
+        &quot;projectId&quot;: &quot;6aa57739f09d3d9e607aae3b&quot;,
+        &quot;testRunId&quot;: &quot;6aa581c00490ae77f03766aa&quot;,
+        &quot;pageUrl&quot;: &quot;https://mansoon-mitra.web.app/community&quot;,
+        &quot;ruleId&quot;: &quot;image-alt&quot;,
+        &quot;impact&quot;: &quot;serious&quot;,
+        &quot;description&quot;: &quot;Image is missing alternative text&quot;,
+        &quot;help&quot;: &quot;Add a meaningful alt attribute to convey the image purpose.&quot;,
+        &quot;selector&quot;: &quot;img&quot;,
+        &quot;html&quot;: &quot;&lt;img alt=\&quot;\&quot; src=\&quot;https://b.tile.openstreetmap.org/12/2875/1827.png\&quot; class=\&quot;leaflet-tile\&quot; style=\&quot;width: 256px; height: 256px; transform: translate3d(-232px, 253px, 0px);\&quot;&gt;&quot;,
+        &quot;status&quot;: &quot;open&quot;,
+        &quot;createdAt&quot;: &quot;2026-09-12T16:48:02.585Z&quot;,
+        &quot;updatedAt&quot;: &quot;2026-09-12T16:48:02.585Z&quot;,
+        &quot;__v&quot;: 0
+      }
+    ]
+  },
+  &quot;performance&quot;: {
+    &quot;warnings&quot;: 0,
+    &quot;avgLoadMs&quot;: 150,
+    &quot;avgApiMs&quot;: 244
+  },
+  &quot;results&quot;: [
+    {
+      &quot;_id&quot;: &quot;6aa581d50490ae77f03768a7&quot;,
+      &quot;projectId&quot;: &quot;6aa57739f09d3d9e607aae3b&quot;,
+      &quot;testRunId&quot;: &quot;6aa581c00490ae77f03766aa&quot;,
+      &quot;testCaseId&quot;: &quot;6aa581d20490ae77f037680e&quot;,
+      &quot;status&quot;: &quot;passed&quot;,
+      &quot;startedAt&quot;: &quot;2026-09-12T16:46:10.475Z&quot;,
+      &quot;completedAt&quot;: &quot;2026-09-12T16:46:13.916Z&quot;,
+      &quot;durationMs&quot;: 3439,
+      &quot;actualResult&quot;: &quot;The page https://mansoon-mitra.web.app/ loads inside the authorized domain.&quot;,
+      &quot;evidence&quot;: {
+        &quot;screenshotIds&quot;: [
+          &quot;6aa581d50490ae77f03768a5&quot;
+        ],
+        &quot;apiRequestIds&quot;: [],
+        &quot;consoleLogIds&quot;: []
+      },
+      &quot;pageUrl&quot;: &quot;https://mansoon-mitra.web.app/&quot;,
+      &quot;createdAt&quot;: &quot;2026-09-12T16:46:13.917Z&quot;,
+      &quot;__v&quot;: 0
+    },
+    {
+      &quot;_id&quot;: &quot;6aa581da0490ae77f03768f6&quot;,
+      &quot;projectId&quot;: &quot;6aa57739f09d3d9e607aae3b&quot;,
+      &quot;testRunId&quot;: &quot;6aa581c00490ae77f03766aa&quot;,
+      &quot;testCaseId&quot;: &quot;6aa581d20490ae77f0376812&quot;,
+      &quot;status&quot;: &quot;passed&quot;,
+      &quot;startedAt&quot;: &quot;2026-09-12T16:46:13.924Z&quot;,
+      &quot;completedAt&quot;: &quot;2026-09-12T16:46:18.365Z&quot;,
+      &quot;durationMs&quot;: 4439,
+      &quot;actualResult&quot;: &quot;The primary action completes without an unhandled application error.&quot;,
+      &quot;evidence&quot;: {
+        &quot;screenshotIds&quot;: [
+          &quot;6aa581da0490ae77f03768f4&quot;
+        ],
+        &quot;apiRequestIds&quot;: [],
+        &quot;consoleLogIds&quot;: []
+      },
+      &quot;pageUrl&quot;: &quot;https://mansoon-mitra.web.app/&quot;,
+      &quot;createdAt&quot;: &quot;2026-09-12T16:46:18.365Z&quot;,
+      &quot;__v&quot;: 0
+    },
+    {
+      &quot;_id&quot;: &quot;6aa581dd0490ae77f037692b&quot;,
+      &quot;projectId&quot;: &quot;6aa57739f09d3d9e607aae3b&quot;,
+      &quot;testRunId&quot;: &quot;6aa581c00490ae77f03766aa&quot;,
+      &quot;testCaseId&quot;: &quot;6aa581d20490ae77f0376816&quot;,
+      &quot;status&quot;: &quot;passed&quot;,
+      &quot;startedAt&quot;: &quot;2026-09-12T16:46:18.368Z&quot;,
+      &quot;completedAt&quot;: &quot;2026-09-12T16:46:21.733Z&quot;,
+      &quot;durationMs&quot;: 3363,
+      &quot;actualResult&quot;: &quot;The page https://mansoon-mitra.web.app/dashboard loads inside the authorized domain.&quot;,
+      &quot;evidence&quot;: {
+        &quot;screenshotIds&quot;: [
+          &quot;6aa581dd0490ae77f0376929&quot;
+        ],
+        &quot;apiRequestIds&quot;: [],
+        &quot;consoleLogIds&quot;: []
+      },
+      &quot;pageUrl&quot;: &quot;https://mansoon-mitra.web.app/dashboard&quot;,
+      &quot;createdAt&quot;: &quot;2026-09-12T16:46:21.733Z&quot;,
+      &quot;__v&quot;: 0
+    },
+    {
+      &quot;_id&quot;: &quot;6aa581e20490ae77f0376963&quot;,
+      &quot;projectId&quot;: &quot;6aa57739f09d3d9e607aae3b&quot;,
+      &quot;testRunId&quot;: &quot;6aa581c00490ae77f03766aa&quot;,
+      &quot;testCaseId&quot;: &quot;6aa581d20490ae77f037681a&quot;,
+      &quot;status&quot;: &quot;passed&quot;,
+      &quot;startedAt&quot;: &quot;2026-09-12T16:46:21.737Z&quot;,
+      &quot;completedAt&quot;: &quot;2026-09-12T16:46:26.076Z&quot;,
+      &quot;durationMs&quot;: 4338,
+      &quot;actualResult&quot;: &quot;The field should constrain or gracefully handle an oversized value.&quot;,
+      &quot;evidence&quot;: {
+        &quot;screenshotIds&quot;: [
+          &quot;6aa581e20490ae77f0376961&quot;
+        ],
+        &quot;apiRequestIds&quot;: [],
+        &quot;consoleLogIds&quot;: []
+      },
+      &quot;pageUrl&quot;: &quot;https://mansoon-mitra.web.app/dashboard&quot;,
+      &quot;createdAt&quot;: &quot;2026-09-12T16:46:26.076Z&quot;,
+      &quot;__v&quot;: 0
+    },
+    {
+      &quot;_id&quot;: &quot;6aa581e60490ae77f03769b2&quot;,
+      &quot;projectId&quot;: &quot;6aa57739f09d3d9e607aae3b&quot;,
+      &quot;testRunId&quot;: &quot;6aa581c00490ae77f03766aa&quot;,
+      &quot;testCaseId&quot;: &quot;6aa581d20490ae77f037681e&quot;,
+      &quot;status&quot;: &quot;passed&quot;,
+      &quot;startedAt&quot;: &quot;2026-09-12T16:46:26.081Z&quot;,
+      &quot;completedAt&quot;: &quot;2026-09-12T16:46:30.441Z&quot;,
+      &quot;durationMs&quot;: 4358,
+      &quot;actualResult&quot;: &quot;The primary action completes without an unhandled application error.&quot;,
+      &quot;evidence&quot;: {
+        &quot;screenshotIds&quot;: [
+          &quot;6aa581e60490ae77f03769b0&quot;
+        ],
+        &quot;apiRequestIds&quot;: [],
+        &quot;consoleLogIds&quot;: []
+      },
+      &quot;pageUrl&quot;: &quot;https://mansoon-mitra.web.app/dashboard&quot;,
+      &quot;createdAt&quot;: &quot;2026-09-12T16:46:30.441Z&quot;,
+      &quot;__v&quot;: 0
+    },
+    {
+      &quot;_id&quot;: &quot;6aa581e90490ae77f03769e7&quot;,
+      &quot;projectId&quot;: &quot;6aa57739f09d3d9e607aae3b&quot;,
+      &quot;testRunId&quot;: &quot;6aa581c00490ae77f03766aa&quot;,
+      &quot;testCaseId&quot;: &quot;6aa581d20490ae77f0376822&quot;,
+      &quot;status&quot;: &quot;passed&quot;,
+      &quot;startedAt&quot;: &quot;2026-09-12T16:46:30.445Z&quot;,
+      &quot;completedAt&quot;: &quot;2026-09-12T16:46:33.862Z&quot;,
+      &quot;durationMs&quot;: 3416,
+      &quot;actualResult&quot;: &quot;The page https://mansoon-mitra.web.app/plan loads inside the authorized domain.&quot;,
+      &quot;evidence&quot;: {
+        &quot;screenshotIds&quot;: [
+          &quot;6aa581e90490ae77f03769e5&quot;
+        ],
+        &quot;apiRequestIds&quot;: [],
+        &quot;consoleLogIds&quot;: []
+      },
+      &quot;pageUrl&quot;: &quot;https://mansoon-mitra.web.app/plan&quot;,
+      &quot;createdAt&quot;: &quot;2026-09-12T16:46:33.863Z&quot;,
+      &quot;__v&quot;: 0
+    },
+    {
+      &quot;_id&quot;: &quot;6aa581ee0490ae77f0376a1f&quot;,
+      &quot;projectId&quot;: &quot;6aa57739f09d3d9e607aae3b&quot;,
+      &quot;testRunId&quot;: &quot;6aa581c00490ae77f03766aa&quot;,
+      &quot;testCaseId&quot;: &quot;6aa581d20490ae77f0376826&quot;,
+      &quot;status&quot;: &quot;passed&quot;,
+      &quot;startedAt&quot;: &quot;2026-09-12T16:46:33.866Z&quot;,
+      &quot;completedAt&quot;: &quot;2026-09-12T16:46:38.226Z&quot;,
+      &quot;durationMs&quot;: 4358,
+      &quot;actualResult&quot;: &quot;The primary action completes without an unhandled application error.&quot;,
+      &quot;evidence&quot;: {
+        &quot;screenshotIds&quot;: [
+          &quot;6aa581ee0490ae77f0376a1d&quot;
+        ],
+        &quot;apiRequestIds&quot;: [],
+        &quot;consoleLogIds&quot;: []
+      },
+      &quot;pageUrl&quot;: &quot;https://mansoon-mitra.web.app/plan&quot;,
+      &quot;createdAt&quot;: &quot;2026-09-12T16:46:38.226Z&quot;,
+      &quot;__v&quot;: 0
+    },
+    {
+      &quot;_id&quot;: &quot;6aa581f10490ae77f0376a6b&quot;,
+      &quot;projectId&quot;: &quot;6aa57739f09d3d9e607aae3b&quot;,
+      &quot;testRunId&quot;: &quot;6aa581c00490ae77f03766aa&quot;,
+      &quot;testCaseId&quot;: &quot;6aa581d20490ae77f037682a&quot;,
+      &quot;status&quot;: &quot;passed&quot;,
+      &quot;startedAt&quot;: &quot;2026-09-12T16:46:38.230Z&quot;,
+      &quot;completedAt&quot;: &quot;2026-09-12T16:46:41.628Z&quot;,
+      &quot;durationMs&quot;: 3397,
+      &quot;actualResult&quot;: &quot;The page https://mansoon-mitra.web.app/checklist loads inside the authorized domain.&quot;,
+      &quot;evidence&quot;: {
+        &quot;screenshotIds&quot;: [
+          &quot;6aa581f10490ae77f0376a69&quot;
+        ],
+        &quot;apiRequestIds&quot;: [],
+        &quot;consoleLogIds&quot;: []
+      },
+      &quot;pageUrl&quot;: &quot;https://mansoon-mitra.web.app/checklist&quot;,
+      &quot;createdAt&quot;: &quot;2026-09-12T16:46:41.629Z&quot;,
+      &quot;__v&quot;: 0
+    },
+    {
+      &quot;_id&quot;: &quot;6aa581f50490ae77f0376a88&quot;,
+      &quot;projectId&quot;: &quot;6aa57739f09d3d9e607aae3b&quot;,
+      &quot;testRunId&quot;: &quot;6aa581c00490ae77f03766aa&quot;,
+      &quot;testCaseId&quot;: &quot;6aa581d20490ae77f037682e&quot;,
+      &quot;status&quot;: &quot;failed&quot;,
+      &quot;startedAt&quot;: &quot;2026-09-12T16:46:41.632Z&quot;,
+      &quot;completedAt&quot;: &quot;2026-09-12T16:46:45.481Z&quot;,
+      &quot;durationMs&quot;: 3847,
+      &quot;actualResult&quot;: &quot;locator.fill: Error: Cannot type text into input[type=number]\nCall log:\n  - waiting for locator('main &gt; div &gt; div:nth-of-type(2) &gt; div:nth-of-type(1) &gt; input').first()\n    - locator resolved to &lt;input min=\&quot;1\&quot; value=\&quot;3\&quot; type=\&quot;number\&quot; class=\&quot;input\&quot;/&gt;\n    - fill(\&quot;AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\&quot;)\n  - attempting fill action\n    - waiting for element to be visible, enabled and editable\n&quot;,
+      &quot;error&quot;: {
+        &quot;type&quot;: &quot;Error&quot;,
+        &quot;message&quot;: &quot;locator.fill: Error: Cannot type text into input[type=number]\nCall log:\n  - waiting for locator('main &gt; div &gt; div:nth-of-type(2) &gt; div:nth-of-type(1) &gt; input').first()\n    - locator resolved to &lt;input min=\&quot;1\&quot; value=\&quot;3\&quot; type=\&quot;number\&quot; class=\&quot;input\&quot;/&gt;\n    - fill(\&quot;AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\&quot;)\n  - attempting fill action\n    - waiting for element to be visible, enabled and editable\n&quot;,
+        &quot;stack&quot;: &quot;locator.fill: Error: Cannot type text into input[type=number]\nCall log:\n  - waiting for locator('main &gt; div &gt; div:nth-of-type(2) &gt; div:nth-of-type(1) &gt; input').first()\n    - locator resolved to &lt;input min=\&quot;1\&quot; value=\&quot;3\&quot; type=\&quot;number\&quot; class=\&quot;input\&quot;/&gt;\n    - fill(\&quot;AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\&quot;)\n  - attempting fill action\n    - waiting for element to be visible, enabled and editable\n\n    at runStep (/Users/omkar/Documents/bug-finder/automation/src/execution/runner.ts:104:47)\n    at executeTest (/Users/omkar/Documents/bug-finder/automation/src/execution/runner.ts:56:13)\n    at async Module.processTestRun (/Users/omkar/Documents/bug-finder/backend/src/workers/testRunProcessor.ts:352:24)&quot;
+      },
+      &quot;evidence&quot;: {
+        &quot;screenshotIds&quot;: [
+          &quot;6aa581f50490ae77f0376a86&quot;
+        ],
+        &quot;apiRequestIds&quot;: [],
+        &quot;consoleLogIds&quot;: []
+      },
+      &quot;pageUrl&quot;: &quot;https://mansoon-mitra.web.app/checklist&quot;,
+      &quot;createdAt&quot;: &quot;2026-09-12T16:46:45.481Z&quot;,
+      &quot;__v&quot;: 0,
+      &quot;classification&quot;: &quot;false_positive&quot;
+    },
+    {
+      &quot;_id&quot;: &quot;6aa581f90490ae77f0376a9a&quot;,
+      &quot;projectId&quot;: &quot;6aa57739f09d3d9e607aae3b&quot;,
+      &quot;testRunId&quot;: &quot;6aa581c00490ae77f03766aa&quot;,
+      &quot;testCaseId&quot;: &quot;6aa581d20490ae77f0376832&quot;,
+      &quot;status&quot;: &quot;passed&quot;,
+      &quot;startedAt&quot;: &quot;2026-09-12T16:46:45.485Z&quot;,
+      &quot;completedAt&quot;: &quot;2026-09-12T16:46:49.877Z&quot;,
+      &quot;durationMs&quot;: 4391,
+      &quot;actualResult&quot;: &quot;The primary action completes without an unhandled application error.&quot;,
+      &quot;evidence&quot;: {
+        &quot;screenshotIds&quot;: [
+          &quot;6aa581f90490ae77f0376a98&quot;
+        ],
+        &quot;apiRequestIds&quot;: [],
+        &quot;consoleLogIds&quot;: []
+      },
+      &quot;pageUrl&quot;: &quot;https://mansoon-mitra.web.app/checklist&quot;,
+      &quot;createdAt&quot;: &quot;2026-09-12T16:46:49.877Z&quot;,
+      &quot;__v&quot;: 0
+    },
+    {
+      &quot;_id&quot;: &quot;6aa581fd0490ae77f0376aac&quot;,
+      &quot;projectId&quot;: &quot;6aa57739f09d3d9e607aae3b&quot;,
+      &quot;testRunId&quot;: &quot;6aa581c00490ae77f03766aa&quot;,
+      &quot;testCaseId&quot;: &quot;6aa581d20490ae77f0376836&quot;,
+      &quot;status&quot;: &quot;passed&quot;,
+      &quot;startedAt&quot;: &quot;2026-09-12T16:46:49.881Z&quot;,
+      &quot;completedAt&quot;: &quot;2026-09-12T16:46:53.280Z&quot;,
+      &quot;durationMs&quot;: 3397,
+      &quot;actualResult&quot;: &quot;The page https://mansoon-mitra.web.app/travel loads inside the authorized domain.&quot;,
+      &quot;evidence&quot;: {
+        &quot;screenshotIds&quot;: [
+          &quot;6aa581fd0490ae77f0376aaa&quot;
+        ],
+        &quot;apiRequestIds&quot;: [],
+        &quot;consoleLogIds&quot;: []
+      },
+      &quot;pageUrl&quot;: &quot;https://mansoon-mitra.web.app/travel&quot;,
+      &quot;createdAt&quot;: &quot;2026-09-12T16:46:53.280Z&quot;,
+      &quot;__v&quot;: 0
+    },
+    {
+      &quot;_id&quot;: &quot;6aa582010490ae77f0376abe&quot;,
+      &quot;projectId&quot;: &quot;6aa57739f09d3d9e607aae3b&quot;,
+      &quot;testRunId&quot;: &quot;6aa581c00490ae77f03766aa&quot;,
+      &quot;testCaseId&quot;: &quot;6aa581d20490ae77f037683a&quot;,
+      &quot;status&quot;: &quot;passed&quot;,
+      &quot;startedAt&quot;: &quot;2026-09-12T16:46:53.284Z&quot;,
+      &quot;completedAt&quot;: &quot;2026-09-12T16:46:57.637Z&quot;,
+      &quot;durationMs&quot;: 4351,
+      &quot;actualResult&quot;: &quot;The field should constrain or gracefully handle an oversized value.&quot;,
+      &quot;evidence&quot;: {
+        &quot;screenshotIds&quot;: [
+          &quot;6aa582010490ae77f0376abc&quot;
+        ],
+        &quot;apiRequestIds&quot;: [],
+        &quot;consoleLogIds&quot;: []
+      },
+      &quot;pageUrl&quot;: &quot;https://mansoon-mitra.web.app/travel&quot;,
+      &quot;createdAt&quot;: &quot;2026-09-12T16:46:57.637Z&quot;,
+      &quot;__v&quot;: 0
+    },
+    {
+      &quot;_id&quot;: &quot;6aa582060490ae77f0376ad0&quot;,
+      &quot;projectId&quot;: &quot;6aa57739f09d3d9e607aae3b&quot;,
+      &quot;testRunId&quot;: &quot;6aa581c00490ae77f03766aa&quot;,
+      &quot;testCaseId&quot;: &quot;6aa581d20490ae77f037683e&quot;,
+      &quot;status&quot;: &quot;passed&quot;,
+      &quot;startedAt&quot;: &quot;2026-09-12T16:46:57.642Z&quot;,
+      &quot;completedAt&quot;: &quot;2026-09-12T16:47:02.012Z&quot;,
+      &quot;durationMs&quot;: 4369,
+      &quot;actualResult&quot;: &quot;The primary action completes without an unhandled application error.&quot;,
+      &quot;evidence&quot;: {
+        &quot;screenshotIds&quot;: [
+          &quot;6aa582060490ae77f0376ace&quot;
+        ],
+        &quot;apiRequestIds&quot;: [],
+        &quot;consoleLogIds&quot;: []
+      },
+      &quot;pageUrl&quot;: &quot;https://mansoon-mitra.web.app/travel&quot;,
+      &quot;createdAt&quot;: &quot;2026-09-12T16:47:02.013Z&quot;,
+      &quot;__v&quot;: 0
+    },
+    {
+      &quot;_id&quot;: &quot;6aa582090490ae77f0376ae2&quot;,
+      &quot;projectId&quot;: &quot;6aa57739f09d3d9e607aae3b&quot;,
+      &quot;testRunId&quot;: &quot;6aa581c00490ae77f03766aa&quot;,
+      &quot;testCaseId&quot;: &quot;6aa581d20490ae77f0376842&quot;,
+      &quot;status&quot;: &quot;passed&quot;,
+      &quot;startedAt&quot;: &quot;2026-09-12T16:47:02.016Z&quot;,
+      &quot;completedAt&quot;: &quot;2026-09-12T16:47:05.409Z&quot;,
+      &quot;durationMs&quot;: 3391,
+      &quot;actualResult&quot;: &quot;The page https://mansoon-mitra.web.app/community loads inside the authorized domain.&quot;,
+      &quot;evidence&quot;: {
+        &quot;screenshotIds&quot;: [
+          &quot;6aa582090490ae77f0376ae0&quot;
+        ],
+        &quot;apiRequestIds&quot;: [],
+        &quot;consoleLogIds&quot;: []
+      },
+      &quot;pageUrl&quot;: &quot;https://mansoon-mitra.web.app/community&quot;,
+      &quot;createdAt&quot;: &quot;2026-09-12T16:47:05.410Z&quot;,
+      &quot;__v&quot;: 0
+    },
+    {
+      &quot;_id&quot;: &quot;6aa5820d0490ae77f0376af4&quot;,
+      &quot;projectId&quot;: &quot;6aa57739f09d3d9e607aae3b&quot;,
+      &quot;testRunId&quot;: &quot;6aa581c00490ae77f03766aa&quot;,
+      &quot;testCaseId&quot;: &quot;6aa581d20490ae77f0376846&quot;,
+      &quot;status&quot;: &quot;passed&quot;,
+      &quot;startedAt&quot;: &quot;2026-09-12T16:47:05.414Z&quot;,
+      &quot;completedAt&quot;: &quot;2026-09-12T16:47:09.772Z&quot;,
+      &quot;durationMs&quot;: 4355,
+      &quot;actualResult&quot;: &quot;The field should constrain or gracefully handle an oversized value.&quot;,
+      &quot;evidence&quot;: {
+        &quot;screenshotIds&quot;: [
+          &quot;6aa5820d0490ae77f0376af2&quot;
+        ],
+        &quot;apiRequestIds&quot;: [],
+        &quot;consoleLogIds&quot;: []
+      },
+      &quot;pageUrl&quot;: &quot;https://mansoon-mitra.web.app/community&quot;,
+      &quot;createdAt&quot;: &quot;2026-09-12T16:47:09.773Z&quot;,
+      &quot;__v&quot;: 0
+    },
+    {
+      &quot;_id&quot;: &quot;6aa582120490ae77f0376b2f&quot;,
+      &quot;projectId&quot;: &quot;6aa57739f09d3d9e607aae3b&quot;,
+      &quot;testRunId&quot;: &quot;6aa581c00490ae77f03766aa&quot;,
+      &quot;testCaseId&quot;: &quot;6aa581d20490ae77f037684a&quot;,
+      &quot;status&quot;: &quot;passed&quot;,
+      &quot;startedAt&quot;: &quot;2026-09-12T16:47:09.778Z&quot;,
+      &quot;completedAt&quot;: &quot;2026-09-12T16:47:14.184Z&quot;,
+      &quot;durationMs&quot;: 4403,
+      &quot;actualResult&quot;: &quot;The primary action completes without an unhandled application error.&quot;,
+      &quot;evidence&quot;: {
+        &quot;screenshotIds&quot;: [
+          &quot;6aa582120490ae77f0376b2d&quot;
+        ],
+        &quot;apiRequestIds&quot;: [],
+        &quot;consoleLogIds&quot;: []
+      },
+      &quot;pageUrl&quot;: &quot;https://mansoon-mitra.web.app/community&quot;,
+      &quot;createdAt&quot;: &quot;2026-09-12T16:47:14.184Z&quot;,
+      &quot;__v&quot;: 0
+    },
+    {
+      &quot;_id&quot;: &quot;6aa582150490ae77f0376b64&quot;,
+      &quot;projectId&quot;: &quot;6aa57739f09d3d9e607aae3b&quot;,
+      &quot;testRunId&quot;: &quot;6aa581c00490ae77f03766aa&quot;,
+      &quot;testCaseId&quot;: &quot;6aa581d20490ae77f037684e&quot;,
+      &quot;status&quot;: &quot;passed&quot;,
+      &quot;startedAt&quot;: &quot;2026-09-12T16:47:14.187Z&quot;,
+      &quot;completedAt&quot;: &quot;2026-09-12T16:47:17.573Z&quot;,
+      &quot;durationMs&quot;: 3384,
+      &quot;actualResult&quot;: &quot;The page https://mansoon-mitra.web.app/recovery loads inside the authorized domain.&quot;,
+      &quot;evidence&quot;: {
+        &quot;screenshotIds&quot;: [
+          &quot;6aa582150490ae77f0376b62&quot;
+        ],
+        &quot;apiRequestIds&quot;: [],
+        &quot;consoleLogIds&quot;: []
+      },
+      &quot;pageUrl&quot;: &quot;https://mansoon-mitra.web.app/recovery&quot;,
+      &quot;createdAt&quot;: &quot;2026-09-12T16:47:17.573Z&quot;,
+      &quot;__v&quot;: 0
+    },
+    {
+      &quot;_id&quot;: &quot;6aa582190490ae77f0376bb0&quot;,
+      &quot;projectId&quot;: &quot;6aa57739f09d3d9e607aae3b&quot;,
+      &quot;testRunId&quot;: &quot;6aa581c00490ae77f03766aa&quot;,
+      &quot;testCaseId&quot;: &quot;6aa581d20490ae77f0376852&quot;,
+      &quot;status&quot;: &quot;passed&quot;,
+      &quot;startedAt&quot;: &quot;2026-09-12T16:47:17.577Z&quot;,
+      &quot;completedAt&quot;: &quot;2026-09-12T16:47:21.961Z&quot;,
+      &quot;durationMs&quot;: 4382,
+      &quot;actualResult&quot;: &quot;The primary action completes without an unhandled application error.&quot;,
+      &quot;evidence&quot;: {
+        &quot;screenshotIds&quot;: [
+          &quot;6aa582190490ae77f0376bae&quot;
+        ],
+        &quot;apiRequestIds&quot;: [],
+        &quot;consoleLogIds&quot;: []
+      },
+      &quot;pageUrl&quot;: &quot;https://mansoon-mitra.web.app/recovery&quot;,
+      &quot;createdAt&quot;: &quot;2026-09-12T16:47:21.961Z&quot;,
+      &quot;__v&quot;: 0
+    },
+    {
+      &quot;_id&quot;: &quot;6aa5821d0490ae77f0376be5&quot;,
+      &quot;projectId&quot;: &quot;6aa57739f09d3d9e607aae3b&quot;,
+      &quot;testRunId&quot;: &quot;6aa581c00490ae77f03766aa&quot;,
+      &quot;testCaseId&quot;: &quot;6aa581d20490ae77f0376856&quot;,
+      &quot;status&quot;: &quot;passed&quot;,
+      &quot;startedAt&quot;: &quot;2026-09-12T16:47:21.965Z&quot;,
+      &quot;completedAt&quot;: &quot;2026-09-12T16:47:25.363Z&quot;,
+      &quot;durationMs&quot;: 3396,
+      &quot;actualResult&quot;: &quot;The page https://mansoon-mitra.web.app/profile loads inside the authorized domain.&quot;,
+      &quot;evidence&quot;: {
+        &quot;screenshotIds&quot;: [
+          &quot;6aa5821d0490ae77f0376be3&quot;
+        ],
+        &quot;apiRequestIds&quot;: [],
+        &quot;consoleLogIds&quot;: []
+      },
+      &quot;pageUrl&quot;: &quot;https://mansoon-mitra.web.app/profile&quot;,
+      &quot;createdAt&quot;: &quot;2026-09-12T16:47:25.363Z&quot;,
+      &quot;__v&quot;: 0
+    },
+    {
+      &quot;_id&quot;: &quot;6aa582210490ae77f0376c34&quot;,
+      &quot;projectId&quot;: &quot;6aa57739f09d3d9e607aae3b&quot;,
+      &quot;testRunId&quot;: &quot;6aa581c00490ae77f03766aa&quot;,
+      &quot;testCaseId&quot;: &quot;6aa581d20490ae77f037685a&quot;,
+      &quot;status&quot;: &quot;passed&quot;,
+      &quot;startedAt&quot;: &quot;2026-09-12T16:47:25.367Z&quot;,
+      &quot;completedAt&quot;: &quot;2026-09-12T16:47:29.770Z&quot;,
+      &quot;durationMs&quot;: 4402,
+      &quot;actualResult&quot;: &quot;The primary action completes without an unhandled application error.&quot;,
+      &quot;evidence&quot;: {
+        &quot;screenshotIds&quot;: [
+          &quot;6aa582210490ae77f0376c32&quot;
+        ],
+        &quot;apiRequestIds&quot;: [],
+        &quot;consoleLogIds&quot;: []
+      },
+      &quot;pageUrl&quot;: &quot;https://mansoon-mitra.web.app/profile&quot;,
+      &quot;createdAt&quot;: &quot;2026-09-12T16:47:29.770Z&quot;,
+      &quot;__v&quot;: 0
+    },
+    {
+      &quot;_id&quot;: &quot;6aa582250490ae77f0376c69&quot;,
+      &quot;projectId&quot;: &quot;6aa57739f09d3d9e607aae3b&quot;,
+      &quot;testRunId&quot;: &quot;6aa581c00490ae77f03766aa&quot;,
+      &quot;testCaseId&quot;: &quot;6aa581d20490ae77f037685e&quot;,
+      &quot;status&quot;: &quot;passed&quot;,
+      &quot;startedAt&quot;: &quot;2026-09-12T16:47:29.774Z&quot;,
+      &quot;completedAt&quot;: &quot;2026-09-12T16:47:33.174Z&quot;,
+      &quot;durationMs&quot;: 3398,
+      &quot;actualResult&quot;: &quot;The page https://mansoon-mitra.web.app/login loads inside the authorized domain.&quot;,
+      &quot;evidence&quot;: {
+        &quot;screenshotIds&quot;: [
+          &quot;6aa582250490ae77f0376c67&quot;
+        ],
+        &quot;apiRequestIds&quot;: [],
+        &quot;consoleLogIds&quot;: []
+      },
+      &quot;pageUrl&quot;: &quot;https://mansoon-mitra.web.app/login&quot;,
+      &quot;createdAt&quot;: &quot;2026-09-12T16:47:33.174Z&quot;,
+      &quot;__v&quot;: 0
+    },
+    {
+      &quot;_id&quot;: &quot;6aa582290490ae77f0376ca1&quot;,
+      &quot;projectId&quot;: &quot;6aa57739f09d3d9e607aae3b&quot;,
+      &quot;testRunId&quot;: &quot;6aa581c00490ae77f03766aa&quot;,
+      &quot;testCaseId&quot;: &quot;6aa581d20490ae77f0376862&quot;,
+      &quot;status&quot;: &quot;passed&quot;,
+      &quot;startedAt&quot;: &quot;2026-09-12T16:47:33.177Z&quot;,
+      &quot;completedAt&quot;: &quot;2026-09-12T16:47:37.562Z&quot;,
+      &quot;durationMs&quot;: 4383,
+      &quot;actualResult&quot;: &quot;The primary action completes without an unhandled application error.&quot;,
+      &quot;evidence&quot;: {
+        &quot;screenshotIds&quot;: [
+          &quot;6aa582290490ae77f0376c9f&quot;
+        ],
+        &quot;apiRequestIds&quot;: [],
+        &quot;consoleLogIds&quot;: []
+      },
+      &quot;pageUrl&quot;: &quot;https://mansoon-mitra.web.app/login&quot;,
+      &quot;createdAt&quot;: &quot;2026-09-12T16:47:37.562Z&quot;,
+      &quot;__v&quot;: 0
+    },
+    {
+      &quot;_id&quot;: &quot;6aa5822c0490ae77f0376cdc&quot;,
+      &quot;projectId&quot;: &quot;6aa57739f09d3d9e607aae3b&quot;,
+      &quot;testRunId&quot;: &quot;6aa581c00490ae77f03766aa&quot;,
+      &quot;testCaseId&quot;: &quot;6aa581d20490ae77f0376866&quot;,
+      &quot;status&quot;: &quot;passed&quot;,
+      &quot;startedAt&quot;: &quot;2026-09-12T16:47:37.566Z&quot;,
+      &quot;completedAt&quot;: &quot;2026-09-12T16:47:40.943Z&quot;,
+      &quot;durationMs&quot;: 3375,
+      &quot;actualResult&quot;: &quot;The page https://mansoon-mitra.web.app/onboarding loads inside the authorized domain.&quot;,
+      &quot;evidence&quot;: {
+        &quot;screenshotIds&quot;: [
+          &quot;6aa5822c0490ae77f0376cda&quot;
+        ],
+        &quot;apiRequestIds&quot;: [],
+        &quot;consoleLogIds&quot;: []
+      },
+      &quot;pageUrl&quot;: &quot;https://mansoon-mitra.web.app/onboarding&quot;,
+      &quot;createdAt&quot;: &quot;2026-09-12T16:47:40.944Z&quot;,
+      &quot;__v&quot;: 0
+    },
+    {
+      &quot;_id&quot;: &quot;6aa582310490ae77f0376d13&quot;,
+      &quot;projectId&quot;: &quot;6aa57739f09d3d9e607aae3b&quot;,
+      &quot;testRunId&quot;: &quot;6aa581c00490ae77f03766aa&quot;,
+      &quot;testCaseId&quot;: &quot;6aa581d20490ae77f037686a&quot;,
+      &quot;status&quot;: &quot;passed&quot;,
+      &quot;startedAt&quot;: &quot;2026-09-12T16:47:40.948Z&quot;,
+      &quot;completedAt&quot;: &quot;2026-09-12T16:47:45.292Z&quot;,
+      &quot;durationMs&quot;: 4342,
+      &quot;actualResult&quot;: &quot;The field should constrain or gracefully handle an oversized value.&quot;,
+      &quot;evidence&quot;: {
+        &quot;screenshotIds&quot;: [
+          &quot;6aa582310490ae77f0376d11&quot;
+        ],
+        &quot;apiRequestIds&quot;: [],
+        &quot;consoleLogIds&quot;: []
+      },
+      &quot;pageUrl&quot;: &quot;https://mansoon-mitra.web.app/onboarding&quot;,
+      &quot;createdAt&quot;: &quot;2026-09-12T16:47:45.292Z&quot;,
+      &quot;__v&quot;: 0
+    },
+    {
+      &quot;_id&quot;: &quot;6aa582350490ae77f0376d25&quot;,
+      &quot;projectId&quot;: &quot;6aa57739f09d3d9e607aae3b&quot;,
+      &quot;testRunId&quot;: &quot;6aa581c00490ae77f03766aa&quot;,
+      &quot;testCaseId&quot;: &quot;6aa581d20490ae77f037686e&quot;,
+      &quot;status&quot;: &quot;passed&quot;,
+      &quot;startedAt&quot;: &quot;2026-09-12T16:47:45.296Z&quot;,
+      &quot;completedAt&quot;: &quot;2026-09-12T16:47:49.690Z&quot;,
+      &quot;durationMs&quot;: 4392,
+      &quot;actualResult&quot;: &quot;The primary action completes without an unhandled application error.&quot;,
+      &quot;evidence&quot;: {
+        &quot;screenshotIds&quot;: [
+          &quot;6aa582350490ae77f0376d23&quot;
+        ],
+        &quot;apiRequestIds&quot;: [],
+        &quot;consoleLogIds&quot;: []
+      },
+      &quot;pageUrl&quot;: &quot;https://mansoon-mitra.web.app/onboarding&quot;,
+      &quot;createdAt&quot;: &quot;2026-09-12T16:47:49.690Z&quot;,
+      &quot;__v&quot;: 0
+    },
+    {
+      &quot;_id&quot;: &quot;6aa5823a0490ae77f0376d3a&quot;,
+      &quot;projectId&quot;: &quot;6aa57739f09d3d9e607aae3b&quot;,
+      &quot;testRunId&quot;: &quot;6aa581c00490ae77f03766aa&quot;,
+      &quot;testCaseId&quot;: &quot;6aa581d20490ae77f0376872&quot;,
+      &quot;status&quot;: &quot;passed&quot;,
+      &quot;startedAt&quot;: &quot;2026-09-12T16:47:49.694Z&quot;,
+      &quot;completedAt&quot;: &quot;2026-09-12T16:47:54.820Z&quot;,
+      &quot;durationMs&quot;: 5124,
+      &quot;actualResult&quot;: &quot;Refreshing the authorized start URL still renders the application.&quot;,
+      &quot;evidence&quot;: {
+        &quot;screenshotIds&quot;: [
+          &quot;6aa5823a0490ae77f0376d38&quot;
+        ],
+        &quot;apiRequestIds&quot;: [],
+        &quot;consoleLogIds&quot;: []
+      },
+      &quot;pageUrl&quot;: &quot;https://mansoon-mitra.web.app/&quot;,
+      &quot;createdAt&quot;: &quot;2026-09-12T16:47:54.821Z&quot;,
+      &quot;__v&quot;: 0
+    }
+  ],
+  &quot;recommendations&quot;: [
+    &quot;Address accessibility findings, starting with missing labels and alt text.&quot;,
+    &quot;Review spelling and placeholder copy before production.&quot;
+  ],
+  &quot;healthScore&quot;: {
+    &quot;score&quot;: 62,
+    &quot;reasons&quot;: [
+      &quot;-20 API failures (16)&quot;,
+      &quot;-15 accessibility findings (32)&quot;,
+      &quot;-10 content issues (12)&quot;,
+      &quot;+7 high test pass rate&quot;
+    ],
+    &quot;disclaimer&quot;: &quot;BugPilot QA Health Score is a product-defined heuristic, not an industry standard.&quot;
+  },
+  &quot;aiFindings&quot;: []
+}</pre>
+  </div>
+</body>
+</html>

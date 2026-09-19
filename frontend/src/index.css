@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 222 47% 7%;
+  --foreground: 210 40% 98%;
+  --card: 222 47% 11%;
+  --card-foreground: 210 40% 98%;
+  --primary: 172 66% 50%;
+  --primary-foreground: 222 47% 8%;
+  --secondary: 217 33% 17%;
+  --secondary-foreground: 210 40% 96%;
+  --muted: 217 33% 16%;
+  --muted-foreground: 215 16% 72%;
+  --accent: 172 66% 50%;
+  --accent-foreground: 222 47% 8%;
+  --destructive: 0 72% 51%;
+  --destructive-foreground: 210 40% 98%;
+  --border: 217 19% 22%;
+  --input: 217 19% 22%;
+  --ring: 172 66% 50%;
+}
+
+.light {
+  --background: 210 40% 98%;
+  --foreground: 222 47% 11%;
+  --card: 0 0% 100%;
+  --card-foreground: 222 47% 11%;
+  --primary: 172 66% 36%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 210 40% 96%;
+  --secondary-foreground: 222 47% 11%;
+  --muted: 210 40% 96%;
+  --muted-foreground: 215 16% 40%;
+  --accent: 172 66% 36%;
+  --accent-foreground: 0 0% 100%;
+  --destructive: 0 72% 51%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 214 32% 88%;
+  --input: 214 32% 88%;
+  --ring: 172 66% 36%;
+}
+
+* { @apply border-border; }
+html, body, #root { height: 100%; }
+body {
+  @apply bg-background text-foreground antialiased;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+.stat-card { @apply rounded-2xl border bg-card p-5 shadow-sm; }
+.page-title { @apply text-2xl font-semibold tracking-tight; }
+.page-subtitle { @apply text-sm font-medium uppercase tracking-[0.16em] text-primary; }

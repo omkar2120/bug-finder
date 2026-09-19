@@ -1,0 +1,28 @@
+{
+  "name": "bugpilot-ai",
+  "version": "1.0.0",
+  "private": true,
+  "description": "BugPilot AI — Your AI QA Engineer",
+  "workspaces": [
+    "frontend",
+    "backend",
+    "automation",
+    "shared"
+  ],
+  "scripts": {
+    "start": "bash start.sh",
+    "stop": "bash stop.sh",
+    "dev": "bash start.sh",
+    "dev:infra": "docker compose up -d mongodb redis",
+    "dev:apps": "concurrently -n backend,frontend,ai,worker -c blue,green,magenta,cyan \"npm run dev -w backend\" \"npm run dev -w frontend\" \"npm run dev --prefix ai-service\" \"npm run worker -w backend\"",
+    "build": "npm run build -w shared && npm run build -w automation && npm run build -w backend && npm run build -w frontend",
+    "test": "npm run test -w backend && npm run test -w automation && npm run test -w frontend && npm run test --prefix ai-service",
+    "lint": "npm run lint -w backend && npm run lint -w frontend"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

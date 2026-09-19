@@ -1,0 +1,105 @@
+services:
+  mongodb:
+    image: mongo:7
+    container_name: bugpilot-mongodb
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    volumes:
+      - bugpilot_mongo_data:/data/db
+    environment:
+      MONGO_INITDB_DATABASE: bugpilot
+    healthcheck:
+      test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  redis:
+    image: redis:7-alpine
+    container_name: bugpilot-redis
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    volumes:
+      - bugpilot_redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  backend:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    container_name: bugpilot-backend
+    restart: unless-stopped
+    depends_on:
+      mongodb:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    env_file:
+      - .env
+    environment:
+      MONGODB_URI: mongodb://mongodb:27017/bugpilot
+      REDIS_URL: redis://redis:6379
+      AI_SERVICE_URL: http://ai-service:8000
+      FRONTEND_URL: http://localhost:5173
+    ports:
+      - "4000:4000"
+    volumes:
+      - ./storage:/app/storage
+
+  worker:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    container_name: bugpilot-worker
+    restart: unless-stopped
+    command: ["npm", "run", "worker", "-w", "backend"]
+    depends_on:
+      mongodb:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    env_file:
+      - .env
+    environment:
+      MONGODB_URI: mongodb://mongodb:27017/bugpilot
+      REDIS_URL: redis://redis:6379
+      AI_SERVICE_URL: http://ai-service:8000
+    volumes:
+      - ./storage:/app/storage
+
+  ai-service:
+    build:
+      context: ./ai-service
+      dockerfile: Dockerfile
+    container_name: bugpilot-ai
+    restart: unless-stopped
+    env_file:
+      - .env
+    environment:
+      AI_SERVICE_SECRET: ${AI_SERVICE_SECRET}
+      AI_PROVIDER: ${AI_PROVIDER:-local}
+      AI_MODEL: ${AI_MODEL:-local-heuristic}
+      AI_API_KEY: ${AI_API_KEY:-}
+    ports:
+      - "8000:8000"
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: bugpilot-frontend
+    restart: unless-stopped
+    depends_on:
+      - backend
+    ports:
+      - "5173:80"
+
+volumes:
+  bugpilot_mongo_data:
+  bugpilot_redis_data:
